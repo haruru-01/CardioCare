@@ -1,0 +1,109 @@
+# CardioCare 프로젝트 보고서
+
+## 1. 프로젝트 개요
+
+CardioCare는 심장질환 여부를 예측하기 위한 머신러닝 기반 프로젝트이다.  
+사용자는 환자의 건강 데이터를 입력하고, 모델은 이를 기반으로 심장질환 가능성을 예측한다.
+
+본 프로젝트에서는 데이터 전처리, 머신러닝 모델 학습, 추론(Inference), 모니터링, 테스트 자동화 및 GitHub Actions 기반 CI 환경 구축까지 진행하였다.
+
+---
+
+## 2. 사용 기술
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- MLflow
+- Git / GitHub
+- GitHub Actions
+
+---
+
+## 3. 프로젝트 구조
+
+```text
+CardioCare/
+│
+├── .github/workflows/
+│   └── ci.yml
+│
+├── data/
+│   ├── heart.csv
+│   └── diabetes_test.csv
+│
+├── models/
+│   └── heart_model.pkl
+│
+├── notebooks/
+│   └── 01_eda_preprocessing.ipynb
+│
+├── src/
+│   ├── preprocessing.py
+│   ├── train.py
+│   ├── inference.py
+│   └── monitor.py
+│
+├── tests/
+│   └── test_pipeline.py
+│
+├── requirements.txt
+├── README.md
+└── Dockerfile
+```
+
+---
+
+## 4. 주요 기능
+
+### 4-1. 데이터 전처리
+
+결측치 처리 및 데이터 정규화를 수행하였다.  
+머신러닝 모델 학습에 적합한 형태로 데이터를 가공하였다.
+
+### 4-2. 모델 학습
+
+Scikit-learn 기반 머신러닝 모델을 사용하여 심장질환 예측 모델을 학습하였다.
+
+### 4-3. 추론 기능
+
+새로운 데이터를 입력하면 학습된 모델을 이용하여 심장질환 여부를 예측할 수 있도록 구현하였다.
+
+### 4-4. 모델 모니터링
+
+입력 데이터의 Drift 여부를 확인할 수 있는 모니터링 기능을 구현하였다.
+
+### 4-5. 테스트 자동화
+
+unittest를 이용하여 파이프라인 테스트를 구성하였다.
+
+### 4-6. GitHub Actions CI
+
+GitHub Actions를 사용하여 코드 Push 시 자동으로:
+
+- Python 환경 설정
+- 패키지 설치
+- 모델 학습 실행
+- 테스트 수행
+
+이 진행되도록 CI 환경을 구축하였다.
+
+---
+
+## 5. 프로젝트 결과
+
+GitHub Repository를 통해 프로젝트를 버전 관리하였으며,  
+GitHub Actions 기반 CI 테스트가 성공적으로 동작하는 것을 확인하였다.
+
+또한 requirements.txt를 구성하여 프로젝트 실행 환경을 재현 가능하도록 구성하였다.
+
+---
+
+## 6. 느낀 점
+
+이번 프로젝트를 통해 단순 머신러닝 모델 구현뿐 아니라 GitHub 기반 협업 환경과 CI 자동화의 중요성을 경험할 수 있었다.
+
+특히 GitHub Actions를 이용한 자동 테스트 환경 구축 과정을 통해 실제 프로젝트 운영 방식에 대해 이해할 수 있었다.
